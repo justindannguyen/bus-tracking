@@ -26,8 +26,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/admin">
-            <AdminApp />
+          <Route exact path="/admin/live" >
+            <LiveTracking />
+          </Route>
+          <Route exact path={`/admin/`}>
+            <AdminHome />
           </Route>
           <Route path="*">
             <Page404 />
@@ -37,27 +40,5 @@ function App() {
     </Router>
   );
 }
-
-function AdminApp() {
-  let { path, url } = useRouteMatch();
-  return (
-    <div>
-      {
-        // TBD - Admin Template go here 
-      }
-      <Switch>
-        <Route exact path={`${path}/live`}>
-          <LiveTracking />
-        </Route>
-        <Route exact path={`${path}/`}>
-          <AdminHome />
-        </Route>
-        <Route path="*">
-          <Page404 />
-        </Route>
-      </Switch>
-    </div>
-  )
-};
 
 export default App;

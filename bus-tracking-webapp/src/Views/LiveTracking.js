@@ -3,7 +3,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import GoogleMapReact from 'google-map-react';
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+import CarMarker from "./../Components/CarMarker";
 
 export default class LiveTracking extends Component {
   static defaultProps = {
@@ -23,10 +24,9 @@ export default class LiveTracking extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
+          <CarMarker
             lat={59.955413}
             lng={30.337844}
-            text="My Marker"
           />
         </GoogleMapReact>
       </div>

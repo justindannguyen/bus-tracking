@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export default class Home extends Component {
   static propTypes = {
-    prop: PropTypes
+
   }
 
   render() {
